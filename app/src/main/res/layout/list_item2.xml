@@ -13,10 +13,10 @@
         >
 
         <TextView
-            android:id="@+id/Country"
+            android:id="@+id/Name"
             android:layout_marginLeft="30dp"
             android:layout_width="match_parent"
-            android:text="hello"
+            android:text="Name"
             android:layout_height="wrap_content"
             />
     </LinearLayout>

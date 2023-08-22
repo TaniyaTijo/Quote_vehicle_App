@@ -9,6 +9,8 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,12 +44,20 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var recyclerView = view.findViewById<RecyclerView>(R.id.recycleView)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
         viewModel=ViewModelProvider(this).get(QViewModel::class.java)
         val QuoteChange:ImageButton=view.findViewById(R.id.QuoteChange)
+        viewModel.getCarManufacureList()
         val QuoteText:TextView=view.findViewById(R.id.QuoteText)
         QuoteChange.setOnClickListener { viewModel.getRandomQuote() }
         viewModel.response.observe(viewLifecycleOwner){
             response->QuoteText.text=response[0]
+        }
+        viewModel.list.observe(viewLifecycleOwner){
+            result ->
+            var adapter= QAdapter(result)
+            recyclerView.adapter = adapter
         }
     }
     companion object {
