@@ -1,10 +1,12 @@
 package com.example.mainapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
+import com.example.mainapp.MainFragment
+import com.example.mainapp.R
+import com.example.mainapp.SplashFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,16 +1,19 @@
 package com.example.mainapp
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mainapp.Adapter.QAdapter
+import com.example.mainapp.Model.Result
+import com.example.mainapp.Model.Vehicle
+import com.example.mainapp.viewModel.QViewModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,7 +25,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [MainFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MainFragment : Fragment() {
+class MainFragment : Fragment(),QAdapter.ItemClickListener {
     private lateinit var viewModel: QViewModel
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -35,6 +38,16 @@ class MainFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
     }
+    override fun OnItemClickListener(clickItem:Result){
+        val Fragment2=Fragment2.newInstance("","")
+        var args = Bundle()
+
+        args?.apply {
+            putParcelable("country",clickItem)
+        }
+        Fragment2.arguments=args
+        parentFragmentManager.beginTransaction().addToBackStack(null).replace(R.id.FragmentContainer,Fragment2,"Fragment2").commit()
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -46,17 +59,17 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         var recyclerView = view.findViewById<RecyclerView>(R.id.recycleView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        viewModel=ViewModelProvider(this).get(QViewModel::class.java)
-        val QuoteChange:ImageButton=view.findViewById(R.id.QuoteChange)
+        viewModel= ViewModelProvider(this).get(QViewModel::class.java)
+        val QuoteChange: ImageButton =view.findViewById(R.id.QuoteChange)
         viewModel.getCarManufacureList()
-        val QuoteText:TextView=view.findViewById(R.id.QuoteText)
+        val QuoteText: TextView =view.findViewById(R.id.QuoteText)
         QuoteChange.setOnClickListener { viewModel.getRandomQuote() }
         viewModel.response.observe(viewLifecycleOwner){
             response->QuoteText.text=response[0]
         }
         viewModel.list.observe(viewLifecycleOwner){
             result ->
-            var adapter= QAdapter(result)
+            var adapter= QAdapter(result,this)
             recyclerView.adapter = adapter
         }
     }
