@@ -2,8 +2,6 @@ package com.example.mainapp.Model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
-
-
 data class Vehicle(
     val Count: Int,
     val Message: String,

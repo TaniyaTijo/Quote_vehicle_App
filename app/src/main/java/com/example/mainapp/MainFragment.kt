@@ -12,19 +12,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mainapp.Adapter.QAdapter
 import com.example.mainapp.Model.Result
-import com.example.mainapp.Model.Vehicle
 import com.example.mainapp.viewModel.QViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MainFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MainFragment : Fragment(),QAdapter.ItemClickListener {
     private lateinit var viewModel: QViewModel
     // TODO: Rename and change types of parameters
@@ -40,8 +32,7 @@ class MainFragment : Fragment(),QAdapter.ItemClickListener {
     }
     override fun OnItemClickListener(clickItem:Result){
         val Fragment2=Fragment2.newInstance("","")
-        var args = Bundle()
-
+        val args = Bundle()
         args?.apply {
             putParcelable("country",clickItem)
         }
@@ -57,7 +48,7 @@ class MainFragment : Fragment(),QAdapter.ItemClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var recyclerView = view.findViewById<RecyclerView>(R.id.recycleView)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recycleView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         viewModel= ViewModelProvider(this).get(QViewModel::class.java)
         val QuoteChange: ImageButton =view.findViewById(R.id.QuoteChange)
@@ -69,20 +60,12 @@ class MainFragment : Fragment(),QAdapter.ItemClickListener {
         }
         viewModel.list.observe(viewLifecycleOwner){
             result ->
-            var adapter= QAdapter(result,this)
+            val adapter= QAdapter(result,this)
             recyclerView.adapter = adapter
         }
     }
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MainFragment.
-         */
-        // TODO: Rename and change types and number of parameters
+
         @JvmStatic fun newInstance(param1: String, param2: String) =
                 MainFragment().apply {
                     arguments = Bundle().apply {

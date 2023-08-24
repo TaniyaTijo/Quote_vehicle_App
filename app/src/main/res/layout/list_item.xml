@@ -10,16 +10,16 @@
             android:id="@+id/MfrName"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="hai"
+            android:text="@string/mfr_text"
             android:textColor="@color/white"
 
 
             />
         <TextView
             android:id="@+id/Country"
-            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             android:layout_width="150dp"
-            android:text="hello"
+            android:text="@string/hello_blank_fragment"
             android:textColor="@color/white"
             android:layout_height="wrap_content"
             />

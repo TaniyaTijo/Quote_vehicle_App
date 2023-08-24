@@ -2,12 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img"
+    android:background="@drawable/fragment_2_background_ing"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment2">
-
-
-<!-- TODO: Update blank fragment layout -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="409dp"
@@ -21,43 +18,36 @@
         app:titleTextColor="@color/black"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="308dp">
-
-
-
         <TextView
             android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="CAR DETAILS"
+            android:text="@string/car_details"
             android:fontFamily="@font/playball_regular"
             android:textColor="@color/white"
             android:textSize="25sp" />
     </androidx.appcompat.widget.Toolbar>
-
     <TextView
         android:id="@+id/Country"
         android:layout_width="133dp"
         android:layout_height="60dp"
-        android:text="COUNTRY "
-        android:layout_marginLeft="4dp"
+        android:text="@string/country"
+        android:layout_marginStart="4dp"
         android:textStyle="bold"
-        android:textSize="15dp"
-
+        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/Mfr_CommonName"
         tools:layout_editor_absoluteX="9dp"
         tools:layout_editor_absoluteY="377dp" />
-
     <TextView
         android:id="@+id/Mfr_CommonName"
         android:layout_width="133dp"
         android:layout_height="60dp"
-        android:text="COMMON NAME "
+        android:text="@string/common_name"
         android:textStyle="bold"
-        android:layout_marginLeft="4dp"
-        android:textSize="15dp"
-
+        android:layout_marginStart="4dp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/Mfr_ID"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteX="8dp"
@@ -66,105 +56,83 @@
         android:id="@+id/Mfr_Name"
         android:layout_width="133dp"
         android:layout_height="60dp"
-        android:text="MFR_NAME "
+        android:text="@string/mfr_name"
         android:textStyle="bold"
-        android:layout_marginLeft="4dp"
-        android:textSize="15dp"
-
+        android:layout_marginStart="4dp"
+        android:textSize="15sp"
         android:layout_marginTop="110dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="438dp" />
-
     <TextView
         android:id="@+id/Mfr_ID"
         android:layout_width="133dp"
         android:layout_height="60dp"
-        android:text="MFR_ID "
-        android:layout_marginLeft="4dp"
+        android:text="@string/mfr_id"
+        android:layout_marginStart="4dp"
         android:textStyle="bold"
-        android:textSize="15dp"
-
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/Mfr_Name3"
         app:layout_constraintStart_toStartOf="parent" />
-
-<!--    <TextView-->
-<!--        android:id="@+id/Mfr_ID2"-->
-<!--        android:layout_width="133dp"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:text="Mfr_ID"-->
-<!--        android:layout_marginBottom="250dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent" -->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
-
     <TextView
         android:id="@+id/Mfr_Name3"
         android:layout_width="133dp"
         android:layout_height="60dp"
-        android:text="VEHICLE TYPE "
+        android:text="@string/vehicle_type"
         android:textStyle="bold"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textColor="@color/black"
-        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="320dp"
         app:layout_constraintStart_toStartOf="parent"
-
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="555dp" />
-    
-
     <TextView
         android:id="@+id/Mfr_CommonName1"
         android:layout_width="266dp"
         android:layout_height="60dp"
-        android:hint="Description"
+        android:hint="@string/description"
         android:textStyle="bold"
         android:text=""
-        android:textSize="15dp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/Mfr_ID1"
         tools:layout_editor_absoluteX="62dp"
         tools:layout_editor_absoluteY="410dp" />
-
     <TextView
         android:id="@+id/Mfr_ID1"
         android:layout_width="266dp"
         android:layout_height="60dp"
-        android:hint="Mfr_ID"
+        android:hint="@string/mfr_id1"
         android:textStyle="bold"
         android:text=""
-        android:textSize="15dp"
+        android:textSize="15sp"
         tools:layout_editor_absoluteX="62dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/Mfr_Name2"
         tools:layout_editor_absoluteY="515dp" />
-
-
     <TextView
         android:id="@+id/Mfr_Name2"
         android:layout_width="266dp"
         android:layout_height="60dp"
         android:layout_marginBottom="320dp"
-
         android:text=""
         android:gravity="center"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-
     <TextView
         android:id="@+id/Country1"
         android:layout_width="266dp"
         android:layout_height="60dp"
-        android:hint="Country "
+        android:hint="@string/country_text"
 
         android:textStyle="bold"
         android:text=""
-        android:textSize="15dp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/Mfr_CommonName1"
         tools:layout_editor_absoluteX="62dp"
@@ -173,28 +141,22 @@
         android:id="@+id/Mfr_Name1"
         android:layout_width="266dp"
         android:layout_height="60dp"
-        android:hint="COMMON NAME"
+        android:hint="@string/common_name_text"
         android:textStyle="bold"
-
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:layout_marginTop="110dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
-    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="312dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        >
+        app:layout_constraintBottom_toBottomOf="parent">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycleView2"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginLeft="14dp"
+            android:layout_marginStart="14dp"
             />
-
-
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

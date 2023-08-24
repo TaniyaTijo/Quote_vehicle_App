@@ -3,5 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="list_clr">#41CDCDD1</color>
-    <color name="list_clr2">#79673AB7</color>
+    <color name="background_clr">#79673AB7</color>
 </resources>

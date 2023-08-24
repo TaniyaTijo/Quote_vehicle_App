@@ -5,8 +5,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainFragment">
-
-
     <LinearLayout
         android:id="@+id/Layout"
         android:layout_width="match_parent"
@@ -17,31 +15,26 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-
         <ImageButton
             android:id="@+id/QuoteChange"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:background="@drawable/img_3"
+            android:background="@drawable/refresh_image"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/Back_image_description" />
         <TextView
             android:id="@+id/QuoteText"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/playball_regular"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:textColor="@color/white"
             android:layout_gravity="center"
-            android:textSize="20dp"
-            android:text="Quotes By Ron Swanson" />
-
-
-
-
+            android:textSize="20sp"
+            android:text="@string/quote_text_heading" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,9 +46,7 @@
             android:id="@+id/recycleView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/img_7" />
+            android:background="@drawable/fragment_1_background_img" />
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 
