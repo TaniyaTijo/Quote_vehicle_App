@@ -58,7 +58,6 @@ private const val ARG_PARAM2 = "param2"
                 Mfr_CommonName1.text=this.Mfr_CommonName
                 Mfr_ID1.text=this.Mfr_ID.toString()
                 Mfr_Name1.text=this.Mfr_Name
-
                 val adapter = VehicleAdapter(this.VehicleTypes)
                 recycler_view.adapter = adapter
 

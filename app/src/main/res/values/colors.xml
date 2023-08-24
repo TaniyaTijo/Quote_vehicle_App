@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="list_clr">#41CDCDD1</color>
     <color name="background_clr">#79673AB7</color>
+    <color name="splash_clr">#889AC6E9</color>
 </resources>

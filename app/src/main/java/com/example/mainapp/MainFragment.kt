@@ -65,7 +65,6 @@ class MainFragment : Fragment(),QAdapter.ItemClickListener {
         }
     }
     companion object {
-
         @JvmStatic fun newInstance(param1: String, param2: String) =
                 MainFragment().apply {
                     arguments = Bundle().apply {

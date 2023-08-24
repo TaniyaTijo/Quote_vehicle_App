@@ -13,8 +13,8 @@ class QAdapter(var listItems: List<Result>,val itemClickListener: ItemClickListe
         fun OnItemClickListener(clickItem: Result)
     }
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var countryName = itemView.findViewById<TextView>(R.id.Country)
-        var companyName = itemView.findViewById<TextView>(R.id.MfrName)
+        var countryName = itemView.findViewById<TextView>(R.id.Mfr_Name)
+        var companyName = itemView.findViewById<TextView>(R.id.Country)
         var layout1 = itemView.findViewById<LinearLayout>(R.id.Layout1)
         init{
             layout1.setOnClickListener{
