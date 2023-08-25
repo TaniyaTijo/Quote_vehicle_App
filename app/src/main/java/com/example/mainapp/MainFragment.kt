@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mainapp.adapter.QuotesAdapter
-import com.example.mainapp.Model.Result
+import com.example.mainapp.model.Result
 import com.example.mainapp.viewModel.QuotesViewModel
 
 private const val ARG_PARAM1 = "param1"

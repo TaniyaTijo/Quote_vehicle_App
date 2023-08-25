@@ -4,9 +4,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mainapp.apiInterface.QuotesApiInterface
-import com.example.mainapp.Retroconfig.RetroConfigQuotes
-import com.example.mainapp.ApiInterface.VehicleApiInterface
-import com.example.mainapp.Model.Result
+import com.example.mainapp.retroconfig.RetroConfigQuotes
+import com.example.mainapp.apiInterface.VehicleApiInterface
+import com.example.mainapp.model.Result
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
@@ -16,14 +16,11 @@ class QuotesViewModel: ViewModel() {
     var api = RetroConfigQuotes().getQuoteInstance().create(QuotesApiInterface::class.java)
     var listapi = RetroConfigQuotes().getCarInstance().create(VehicleApiInterface::class.java)
     fun getRandomQuote() {
-        try{
             viewModelScope.launch{
                 val res = api.getRandomQuote()
                 response.value=res.body()
             }
-        }catch (e:Exception){
-            println(e.message)
-        }
+
     }
     fun getCarManufacureList() {
         viewModelScope.launch {

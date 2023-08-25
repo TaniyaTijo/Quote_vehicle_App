@@ -2,9 +2,9 @@ package com.example.mainapp
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mainapp.ApiInterface.VehicleApiInterface
-import com.example.mainapp.Model.Result
-import com.example.mainapp.Retroconfig.RetroConfigQuotes
+import com.example.mainapp.apiInterface.VehicleApiInterface
+import com.example.mainapp.model.Result
+import com.example.mainapp.retroconfig.RetroConfigQuotes
 import kotlinx.coroutines.launch
 class VehicleViewModel: ViewModel() {
     private var response1 = MutableLiveData<List<Result>>()

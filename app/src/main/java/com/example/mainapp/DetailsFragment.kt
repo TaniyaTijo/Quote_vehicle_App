@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mainapp.adapter.VehicleAdapter
-import com.example.mainapp.Model.Result
+import com.example.mainapp.model.Result
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
