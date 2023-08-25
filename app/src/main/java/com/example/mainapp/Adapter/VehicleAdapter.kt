@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mainapp.R
-import com.example.mainapp.Model.VehicleType
+import com.example.mainapp.model.VehicleType
 
 class VehicleAdapter(private val vehicleList: List<VehicleType>) :
     RecyclerView.Adapter<VehicleAdapter.ViewHolder>() {

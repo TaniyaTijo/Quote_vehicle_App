@@ -6,7 +6,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mainapp.R
-import com.example.mainapp.Model.Result
+import com.example.mainapp.model.Result
 
 class QuotesAdapter(private var listItems: List<Result>, private val itemClickListener: ItemClickListener) : RecyclerView.Adapter<QuotesAdapter.ViewHolder>() {
     interface ItemClickListener {

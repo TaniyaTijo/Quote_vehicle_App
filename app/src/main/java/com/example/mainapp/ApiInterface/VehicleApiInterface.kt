@@ -1,6 +1,6 @@
-package com.example.mainapp.ApiInterface
+package com.example.mainapp.apiInterface
 
-import com.example.mainapp.Model.Vehicle
+import com.example.mainapp.model.Vehicle
 import retrofit2.Response
 import retrofit2.http.GET
 

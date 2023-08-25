@@ -15,6 +15,7 @@
             android:text="@string/Name_Text"
             android:textSize="15sp"
             android:textStyle="bold"
+            android:textColor="@color/white"
             android:fontFamily="@font/poppins_mediumitalic"
             android:layout_height="match_parent" />
     </LinearLayout>
