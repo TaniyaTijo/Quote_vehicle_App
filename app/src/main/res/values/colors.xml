@@ -2,7 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="list_clr">#41CDCDD1</color>
+    <color name="list_clr">#60131312</color>
+    <color name="list_clr2">#8B96CCF7</color>
+    <color name="titlr_clr">#7D108F</color>
     <color name="background_clr">#79673AB7</color>
-    <color name="splash_clr">#889AC6E9</color>
+    <color name="splash_clr">#FFFFFB</color>
+    <color name="mainfragment">#0B360E</color>
 </resources>

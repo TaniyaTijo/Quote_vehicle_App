@@ -1,22 +1,25 @@
 <resources>
     <string name="app_name">MainApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello</string>
     <string name="mfr_text">Hai</string>
     <string name="Name_Text">Name</string>
     <string name="welcome_text">CAR APP</string>
     <string name="quote_text_heading">Quotes By Ron Swanson</string>
     <string name="Back_image_description">Back button"</string>
-    <string name="mfr_name">MFR_NAME</string>
-    <string name="common_name">COMMON NAME</string>
-    <string name="mfr_id">MFR_ID</string>
-    <string name="country">COUNTRY</string>
+    <string name="mfr_name">Mfr_Name</string>
+    <string name="common_name">Common Name</string>
+    <string name="mfr_id">Mfr_Id</string>
+    <string name="country">Country</string>
     <string name="car_details">CAR DETAILS</string>
-    <string name="vehicle_type">VEHICLE TYPE</string>
+    <string name="vehicle_type">Vehicle Types</string>
     <string name="description">Description</string>
     <string name="mfr_id1">Mfr_ID</string>
     <string name="country_text">Country</string>
-    <string name="common_name_text">COMMON NAME</string>
+    <string name="common_name_text">Common Name</string>
     <string name="splash_screen_background">splash screen background</string>
+    <string name="company_name">COMPANY NAME</string>
+    <string name="country_title">COUNTRY</string>
+    <string name="key">country</string>
+    <string name="list_fragment_keyword">list_fragment</string>
 
 </resources>
