@@ -8,8 +8,6 @@ import com.example.mainapp.retroconfig.RetroConfigQuotes
 import com.example.mainapp.apiInterface.VehicleApiInterface
 import com.example.mainapp.model.Result
 import kotlinx.coroutines.launch
-import java.lang.Exception
-
 class QuotesViewModel: ViewModel() {
     var response = MutableLiveData<List<String>>()
     var list =MutableLiveData<List<Result>>()

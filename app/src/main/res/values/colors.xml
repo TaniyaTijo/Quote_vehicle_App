@@ -7,5 +7,6 @@
     <color name="titlr_clr">#103F8F</color>
     <color name="background_clr">#79673AB7</color>
     <color name="splash_clr">#FFFFFB</color>
+    <color name="login_clr">#2A818173</color>
     <color name="mainfragment">#0B360E</color>
 </resources>
