@@ -1,6 +1,8 @@
 package com.example.mainapp
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +13,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.carsapp.viewmodal.LoginViewModel
-
+import com.google.gson.Gson
 
 
 lateinit var Loginviewmodel: LoginViewModel
@@ -20,6 +22,7 @@ class LoginFragment : Fragment() {
     lateinit var username: EditText
     lateinit var password: EditText
     lateinit var login: Button
+    lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -29,6 +32,7 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val inflatedView = inflater.inflate(R.layout.fragment_login, container, false)
+
         with(inflatedView) {
             username = findViewById(R.id.username)
             password = findViewById(R.id.password)
@@ -67,10 +71,19 @@ class LoginFragment : Fragment() {
                 Toast.makeText(requireContext(), "Invalid credentials!", Toast.LENGTH_SHORT).show()
             }
         }
+        Loginviewmodel.userData.observe(viewLifecycleOwner){
+            result->
+            sharedPreferences = requireActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+            val edit = sharedPreferences.edit()
+            val jsonUserData=Gson().toJson(result)
+            edit.putString("user_data",jsonUserData)
+            edit.apply()
+
+        }
     }
 
-//    companion object {
-//        @JvmStatic
-//        fun newInstance() = LoginFragment()
-//    }
+    companion object {
+        @JvmStatic
+        fun newInstance() = LoginFragment()
+    }
 }

@@ -11,14 +11,13 @@ import kotlinx.coroutines.launch
 class QuotesViewModel: ViewModel() {
     var response = MutableLiveData<List<String>>()
     var list =MutableLiveData<List<Result>>()
-    var api = RetroConfigQuotes().getQuoteInstance().create(QuotesApiInterface::class.java)
-    var listapi = RetroConfigQuotes().getCarInstance().create(VehicleApiInterface::class.java)
+    private var api = RetroConfigQuotes().getQuoteInstance().create(QuotesApiInterface::class.java)
+    private var listapi = RetroConfigQuotes().getCarInstance().create(VehicleApiInterface::class.java)
     fun getRandomQuote() {
             viewModelScope.launch{
                 val res = api.getRandomQuote()
                 response.value=res.body()
             }
-
     }
     fun getCarManufacureList() {
         viewModelScope.launch {

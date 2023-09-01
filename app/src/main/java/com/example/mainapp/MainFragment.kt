@@ -1,5 +1,7 @@
 package com.example.mainapp
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,14 +13,18 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mainapp.adapter.QuotesAdapter
+import com.example.mainapp.apiInterface.setImage
+import com.example.mainapp.model.Login
 import com.example.mainapp.model.Result
 import com.example.mainapp.viewModel.QuotesViewModel
+import com.google.gson.Gson
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 class MainFragment : Fragment(), QuotesAdapter.ItemClickListener {
     private lateinit var viewModel: QuotesViewModel
+    lateinit var sharedPreferences: SharedPreferences
     private var param1: String? = null
     private var param2: String? = null
 
@@ -52,6 +58,7 @@ class MainFragment : Fragment(), QuotesAdapter.ItemClickListener {
         view.apply {
             val recyclerView: RecyclerView = findViewById(R.id.recycleView)
             val quoteChange: ImageButton = findViewById(R.id.QuoteChange)
+            val profilepic: ImageButton = findViewById(R.id.Profile)
             val quoteText: TextView = findViewById(R.id.QuoteText)
 
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -67,6 +74,17 @@ class MainFragment : Fragment(), QuotesAdapter.ItemClickListener {
                 val adapter = QuotesAdapter(result, this@MainFragment)
                 recyclerView.adapter = adapter
             }
+            profilepic.setOnClickListener {
+                val loginDetailFragment=LoginDetailFragment()
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.FragmentContainer,loginDetailFragment)
+                    .addToBackStack(null)
+                    .commit()
+            }
+            sharedPreferences=requireContext().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+            val jsonData=sharedPreferences.getString("user_data",null)
+            val finaluserData= Gson().fromJson(jsonData, Login::class.java)
+            profilepic.setImage(finaluserData.image)
         }
     }
 

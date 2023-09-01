@@ -15,7 +15,7 @@ import com.example.mainapp.model.Result
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-    class DetailsFragment : Fragment() {
+class DetailsFragment : Fragment() {
     private lateinit var viewModel1: VehicleViewModel
     private var param1: String? = null
     private var param2: String? = null
@@ -33,36 +33,36 @@ private const val ARG_PARAM2 = "param2"
         }
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-            super.onViewCreated(view, savedInstanceState)
-            val recyclerView = view.findViewById<RecyclerView>(R.id.recycleView2)
-            recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            viewModel1 = ViewModelProvider(this).get(VehicleViewModel::class.java)
-            viewModel1.getCarManufacureList()
-        }
-        override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-        ): View? {
-            val receiveData = arguments?.getParcelable<Result>("@string/key")
-            return inflater.inflate(R.layout.fragment_details, container, false)?.apply {
-                mfrID1 = findViewById(R.id.Mfr_ID1)
-                mfrCommonName1 = findViewById(R.id.Mfr_CommonName1)
-                mfrName1 = findViewById(R.id.Mfr_Name1)
-                country1 = findViewById(R.id.Country1)
-                recyclerview = findViewById(R.id.recycleView2)
+        super.onViewCreated(view, savedInstanceState)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recycleView2)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        viewModel1 = ViewModelProvider(this).get(VehicleViewModel::class.java)
+        viewModel1.getCarManufacureList()
+    }
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val receiveData = arguments?.getParcelable<Result>("@string/key")
+        return inflater.inflate(R.layout.fragment_details, container, false)?.apply {
+            mfrID1 = findViewById(R.id.Mfr_ID1)
+            mfrCommonName1 = findViewById(R.id.Mfr_CommonName1)
+            mfrName1 = findViewById(R.id.Mfr_Name1)
+            country1 = findViewById(R.id.Country1)
+            recyclerview = findViewById(R.id.recycleView2)
 
-                receiveData?.apply {
-                    country1.text = this.Country
-                    mfrCommonName1.text = this.Mfr_CommonName
-                    mfrID1.text = this.Mfr_ID.toString()
-                    mfrName1.text = this.Mfr_Name
-                    val adapter = VehicleAdapter(this.VehicleTypes)
-                    recyclerview.adapter = adapter
-                }
+            receiveData?.apply {
+                country1.text = this.Country
+                mfrCommonName1.text = this.Mfr_CommonName
+                mfrID1.text = this.Mfr_ID.toString()
+                mfrName1.text = this.Mfr_Name
+                val adapter = VehicleAdapter(this.VehicleTypes)
+                recyclerview.adapter = adapter
             }
         }
+    }
 
-        companion object {
+    companion object {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             DetailsFragment().apply {

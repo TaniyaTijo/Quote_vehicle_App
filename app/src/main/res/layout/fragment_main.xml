@@ -3,37 +3,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_1"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainFragment">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="409dp"
+        android:layout_height="45dp"
+        android:background="@color/titlr_clr1"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/black"
+        >
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/home_screen"
+            android:fontFamily="@font/playball_regular"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+    </androidx.appcompat.widget.Toolbar>
     <LinearLayout
         android:id="@+id/Layout"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:background="@drawable/img"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:cardCornerRadius="50dp"
+            >
         <ImageButton
-            android:id="@+id/QuoteChange"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/refreshmain"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/Profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:contentDescription="@string/Back_image_description" />
+        </androidx.cardview.widget.CardView>
+        <ImageButton
+            android:id="@+id/QuoteChange"
+            android:layout_width="24dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:background="@drawable/refreshmain"
+            android:contentDescription="@string/Back_image_description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/QuoteText"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/playball_regular"
-            android:layout_marginStart="@dimen/spacing_8dp"
-            android:textColor="@color/black"
             android:layout_gravity="center"
-            android:textSize="20sp"
-            android:text="@string/quote_text_heading" />
+            android:layout_marginStart="@dimen/spacing_8dp"
+            android:paddingTop="@dimen/spacing_24dp"
+            android:fontFamily="@font/playball_regular"
+            android:text="@string/quote_text_heading"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

@@ -9,6 +9,4 @@ class MainActivity : AppCompatActivity() {
         val f1 = MainFragment.newInstance("","")
         supportFragmentManager.beginTransaction().replace(R.id.FragmentContainer,f1,"@string/list_fragment_keyword").commit()
     }
-
-
 }

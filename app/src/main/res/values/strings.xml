@@ -27,5 +27,13 @@
     <string name="username">Username</string>
     <string name="login_text">GO</string>
     <string name="login_header">LOGIN</string>
+    <string name="id">Id</string>
+    <string name="email">Email</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="gender">Gender</string>
+    <string name="person_details">MY PROFILE</string>
+    <string name="home_screen">HOME SCREEN</string>
+    <string name="back">Back</string>
 
 </resources>
