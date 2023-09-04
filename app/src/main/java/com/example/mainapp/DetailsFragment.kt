@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -50,6 +51,14 @@ class DetailsFragment : Fragment() {
             mfrName1 = findViewById(R.id.Mfr_Name1)
             country1 = findViewById(R.id.Country1)
             recyclerview = findViewById(R.id.recycleView2)
+            val btn = findViewById<Button>(R.id.Back)
+            btn.setOnClickListener {
+                val mainFragment = MainFragment.newInstance("", "")
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.FragmentContainer, mainFragment)
+                    .addToBackStack(null)
+                    .commit()
+            }
 
             receiveData?.apply {
                 country1.text = this.Country

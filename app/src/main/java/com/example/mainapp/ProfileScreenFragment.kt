@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
@@ -62,6 +63,14 @@ class LoginDetailFragment : Fragment() {
             gender1 = findViewById(R.id.Gender1)
             imageView1 = findViewById(R.id.imageView1)
             imageView2 = findViewById(R.id.imageView2)
+            val btn = findViewById<Button>(R.id.Back)
+            btn.setOnClickListener {
+                val mainFragment = MainFragment.newInstance("", "")
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.FragmentContainer, mainFragment)
+                    .addToBackStack(null)
+                    .commit()
+            }
             sharedPreferences =
                 requireContext().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
             val jsonData = sharedPreferences.getString("user_data", null)
